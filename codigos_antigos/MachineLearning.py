@@ -12,8 +12,8 @@ import mysql.connector
 # Criando a conexão com o banco de dados
 conn = mysql.connector.connect(
     database="TFBD",
-    user="root",
-    password="unbMySQL#21",
+    user="user",
+    password="password",
     host="localhost",
     port="3306"
 )
