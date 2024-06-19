@@ -19,7 +19,7 @@ import json
 conn = mysql.connector.connect(
     database="TFBD",
     user="root",
-    password="unbMySQL#21",
+    password="root",
     host="localhost",
     port="3306"
 )

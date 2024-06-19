@@ -21,7 +21,7 @@ def export_to_csv(table_name, file_name):
 
         # Abrindo um arquivo CSV para escrever os dados
         with open(file_name, 'w', newline='', encoding='utf-8') as csvfile:  # Define a codificação do arquivo como utf-8
-            csvwriter = csv.writer(csvfile)
+            csvwriter = csv.writer(csvfile, quotechar='"', quoting=csv.QUOTE_ALL)
             
             # Escrevendo o cabeçalho no CSV (nomes das colunas)
             csvwriter.writerow([i[0] for i in cur.description])
@@ -41,8 +41,12 @@ def export_to_csv(table_name, file_name):
             conn.close()
 
 # Exportando os dados das tabelas 'partidos', 'deputados', 'gastos' e 'gastos_estranhos' para arquivos CSV
-export_to_csv('partidos', 'partidos.csv')
-export_to_csv('deputados', 'deputados.csv')
-export_to_csv('gastos', 'gastos.csv')
-export_to_csv('gastos_estranhos', 'gastos_estranhos.csv')
+#export_to_csv('partidos', 'partidos.csv')
+#export_to_csv('deputados', 'deputados.csv')
+#export_to_csv('gastos', 'gastos.csv')
+#export_to_csv('gastos_estranhos', 'gastos_estranhos.csv')
+#export_to_csv('gasto_medio_mensal', 'gasto_medio_mensal.csv')
+#export_to_csv('resultados_regressao', 'resultados_regressao.csv')
+export_to_csv('top_spending_deputies', 'top_spending_deputies.csv')
+export_to_csv('top_spending_items', 'top_spending_items.csv')
 
