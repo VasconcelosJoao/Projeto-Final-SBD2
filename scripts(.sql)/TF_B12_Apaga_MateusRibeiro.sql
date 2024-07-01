@@ -10,20 +10,17 @@
 -- Base de Dados (nome) ...: TFBD
 --
 -- PROJETO => 01 Base de Dados
---         => 08 Tabelas
+--         => 04 Tabelas
 --
 -- 
 -- Ultimas Alteracoes
 --   
---   
+-- 01/07/2024 => atualização do Apaga
+--
 -- ----------------------------------------------------------------------------------------
 
 USE TFBD;
 
-DROP TABLE top_spending_items;
-DROP TABLE top_spending_deputies;
-DROP TABLE gasto_medio_mensal;
-DROP TABLE resultados_regressao;
 DROP TABLE gastos_estranhos;
 DROP TABLE gastos;
 DROP TABLE deputados;
