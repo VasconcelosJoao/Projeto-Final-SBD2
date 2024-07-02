@@ -19,9 +19,9 @@
 --
 -- ----------------------------------------------------------------------------------------
 
--- A VIEW vw_gastos_mensais_deputados agrega os gastos mensais de cada deputado, apresentando o total de gastos mensais,
+-- A VIEW vw_gastos_mensais_deputados agrega os gastos mensais de cada deputado, apresentando o total de gastos por mês,
 -- a média dos gastos mensais, juntamente com o partido ao qual ele pertence e a data dos gastos.
--- Destacando os deputados que mais gasteram.
+-- Destacando os deputados que mais gasteram por mês.
 
 CREATE VIEW vw_gastos_mensais_deputados AS
 SELECT 
@@ -31,7 +31,7 @@ SELECT
     p.nome AS nome_partido,
     YEAR(g.data) AS ano,
     MONTH(g.data) AS mes,
-    SUM(g.valor) AS total_gastos_mensais,
+    SUM(g.valor) AS total_gastos_mensal,
     AVG(SUM(g.valor)) OVER(PARTITION BY d.id) AS media_gastos_mensais
 FROM 
     deputados d
@@ -42,12 +42,13 @@ JOIN
 GROUP BY 
     d.id, d.nome, p.sigla, p.nome, YEAR(g.data), MONTH(g.data)
 ORDER BY 
-    total_gastos_mensais DESC;
+    total_gastos_mensal DESC;
 
 
 SELECT * FROM vw_gastos_mensais_deputados;
 
--- A VIEW  agrega os gastos totais por partido e por tipo de despesa de toda a câmara dos deputados.
+-- A VIEW  agrega os gastos totais por partido e por tipo de despesa de toda a câmara dos deputados. 
+-- Tal view foi criada para fornecer uma análise detalhada dos gastos totais de cada partido, categorizados por tipo de despesa.
 
 CREATE VIEW vw_total_partido_tipo_gastos AS
 SELECT 
