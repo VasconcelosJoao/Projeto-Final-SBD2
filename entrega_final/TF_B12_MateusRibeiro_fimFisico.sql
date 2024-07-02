@@ -11,8 +11,9 @@
 --
 -- PROJETO => 01 Base de Dados
 --         => 04 Tabelas
+--         => 02 Views
+--         => 02 Consultas
 --
--- 
 -- Ultimas Alteracoes
 --   
 -- 01/07/2024 => atualização do Físico   
