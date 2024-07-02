@@ -26,14 +26,14 @@ CREATE DATABASE IF NOT EXISTS TFBD;
 USE TFBD;
 
 
-CREATE TABLE IF NOT EXISTS partidos (
+CREATE TABLE partidos (
     sigla VARCHAR(50) PRIMARY KEY,
     nome VARCHAR(255)
 
 ) ENGINE = InnoDB;
 
 
-CREATE TABLE IF NOT EXISTS deputados (
+CREATE TABLE deputados (
     id INT PRIMARY KEY,
     nome VARCHAR(255),
     partido VARCHAR(50),
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS deputados (
 ) ENGINE = InnoDB;
 
 
-CREATE TABLE IF NOT EXISTS gastos (
+CREATE TABLE gastos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_deputado INT,
     data DATE,
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS gastos (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1;
 
 
-CREATE TABLE IF NOT EXISTS gastos_estranhos (
+CREATE TABLE gastos_estranhos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_deputado INT,
     data DATE,
