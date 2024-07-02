@@ -20,8 +20,8 @@ data = response.json()
 try:
     with mysql.connector.connect(
         database="TFBD",
-        user="root",
-        password="unbMySQL#21",
+        user="user",
+        password="password",
         host="localhost",
         port="3306"
     ) as conn:
