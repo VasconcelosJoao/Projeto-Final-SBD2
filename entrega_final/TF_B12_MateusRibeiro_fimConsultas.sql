@@ -40,9 +40,10 @@ JOIN
 JOIN 
     partidos p ON d.partido = p.sigla
 GROUP BY 
-    d.nome, p.sigla, p.nome, YEAR(g.data), MONTH(g.data)
+    d.id, d.nome, p.sigla, p.nome, YEAR(g.data), MONTH(g.data)
 ORDER BY 
     total_gastos_mensais DESC;
+
 
 SELECT * FROM vw_gastos_mensais_deputados;
 
