@@ -15,8 +15,6 @@
 --         => 02 Consultas
 --
 -- Ultimas Alteracoes
---   
--- 01/07/2024 => atualização do Físico   
 --
 -- ----------------------------------------------------------------------------------------
 
@@ -27,43 +25,62 @@ USE TFBD;
 
 
 CREATE TABLE partidos (
-    sigla VARCHAR(50) PRIMARY KEY,
-    nome VARCHAR(255)
+    sigla VARCHAR(50) NOT NULL,
+    nome VARCHAR(255),
+
+    CONSTRAINT PARTIDOS_PK PRIMARY KEY (sigla)
 
 ) ENGINE = InnoDB;
 
 
 CREATE TABLE deputados (
-    id INT PRIMARY KEY,
+    id INT NOT NULL,
     nome VARCHAR(255),
     partido VARCHAR(50),
-    FOREIGN KEY (partido) REFERENCES partidos(sigla)
+
+    CONSTRAINT DEPUTADOS_PK PRIMARY KEY (id),
+
+    CONSTRAINT DEPUTADOS_PARTIDOS_FK FOREIGN KEY (partido) 
+        REFERENCES partidos(sigla)
+            ON DELETE RESTRICT
+            ON UPDATE RESTRICT
+
 ) ENGINE = InnoDB;
 
 
 CREATE TABLE gastos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT NOT NULL AUTO_INCREMENT,
     id_deputado INT,
     data DATE,
     valor FLOAT,
     tipoDespesa VARCHAR(255),
     codDocumento INT,
-    partido VARCHAR(50),
-    FOREIGN KEY (id_deputado) REFERENCES deputados(id),
-    FOREIGN KEY (partido) REFERENCES partidos(sigla)
+
+    CONSTRAINT GASTOS_PK PRIMARY KEY (id),
+    
+    CONSTRAINT GASTOS_DEPUTADOS_FK FOREIGN KEY (id_deputado) 
+        REFERENCES deputados(id)
+            ON DELETE RESTRICT
+            ON UPDATE RESTRICT
+
 ) ENGINE = InnoDB AUTO_INCREMENT = 1;
 
 
 CREATE TABLE gastos_estranhos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT NOT NULL AUTO_INCREMENT,
     id_deputado INT,
     data DATE,
     valor FLOAT,
     tipoDespesa VARCHAR(255),
     codDocumento INT,
-    partido VARCHAR(50),
-    FOREIGN KEY (id_deputado) REFERENCES deputados(id),
-    FOREIGN KEY (partido) REFERENCES partidos(sigla)
+
+    CONSTRAINT GASTOS_ESTRANHOS_PK PRIMARY KEY (id),
+    
+    CONSTRAINT GASTOS_ESTRANHOS_DEPUTADOS_FK FOREIGN KEY (id_deputado) 
+        REFERENCES deputados(id)
+            ON DELETE RESTRICT
+            ON UPDATE RESTRICT
+
 ) ENGINE = InnoDB AUTO_INCREMENT = 1;
 
 
