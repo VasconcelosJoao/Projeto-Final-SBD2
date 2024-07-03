@@ -20,6 +20,9 @@
 
 USE TFBD;
 
+DROP VIEW vw_total_partido_tipo_gastos;
+DROP VIEW vw_gastos_mensais_deputados;
+
 DROP TABLE gastos_estranhos;
 DROP TABLE gastos;
 DROP TABLE deputados;
