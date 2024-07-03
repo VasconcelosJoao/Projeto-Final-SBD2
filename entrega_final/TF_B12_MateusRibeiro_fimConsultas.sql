@@ -1,6 +1,6 @@
 -- -------- < Trabalho Final - Dataming > --------
 --
---                    SCRIPT DE CRIACAO (DML)
+--                    SCRIPT DE CONSULTAS (DML)
 --
 -- Data Criacao ...........: 30/06/2024
 -- Autor(es) ..............: João Lucas Pinto Vasconcelos
@@ -16,12 +16,12 @@
 --
 -- Ultimas Alteracoes
 --     
---
 -- ----------------------------------------------------------------------------------------
 
--- A VIEW vw_gastos_mensais_deputados agrega os gastos mensais de cada deputado, apresentando o total de gastos por mês,
--- a média dos gastos mensais, juntamente com o partido ao qual ele pertence e a data dos gastos.
--- Destacando os deputados que mais gasteram por mês.
+-- A VIEW vw_gastos_mensais_deputados agrega os gastos mensais de cada deputado, 
+-- apresentando o total de gastos por mês, a média dos gastos mensais, juntamente 
+-- com o partido ao qual ele pertence, destacando os deputados 
+-- que mais gasteram por mês (ordem decrescente de gastos totais)
 
 CREATE VIEW vw_gastos_mensais_deputados AS
 SELECT 
@@ -47,8 +47,9 @@ ORDER BY
 
 SELECT * FROM vw_gastos_mensais_deputados;
 
--- A VIEW  agrega os gastos totais por partido e por tipo de despesa de toda a câmara dos deputados. 
--- Tal view foi criada para fornecer uma análise detalhada dos gastos totais de cada partido, categorizados por tipo de despesa.
+-- A VIEW  agrega os gastos totais por partido e por tipo de despesa de toda a 
+-- câmara dos deputados. Fornece uma análise detalhada dos gastos totais de 
+-- cada partido, categorizados por tipo de despesa.
 
 CREATE VIEW vw_total_partido_tipo_gastos AS
 SELECT 
