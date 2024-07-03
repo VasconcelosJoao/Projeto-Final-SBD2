@@ -45,7 +45,10 @@ ORDER BY
     total_gastos_mensal DESC;
 
 
+-- Consulta que aciona a view
 SELECT * FROM vw_gastos_mensais_deputados;
+
+
 
 -- A VIEW  agrega os gastos totais por partido e por tipo de despesa de toda a 
 -- câmara dos deputados. Fornece uma análise detalhada dos gastos totais de 
@@ -69,4 +72,6 @@ ORDER BY
     p.sigla, g.tipoDespesa;
 
 
+-- Consulta que aciona a view
 SELECT * FROM vw_total_partido_tipo_gastos;
+
