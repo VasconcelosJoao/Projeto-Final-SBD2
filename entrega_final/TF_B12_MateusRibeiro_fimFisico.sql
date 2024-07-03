@@ -83,4 +83,5 @@ CREATE TABLE gastos_estranhos (
 
 ) ENGINE = InnoDB AUTO_INCREMENT = 1;
 
-
+CREATE INDEX gastos_tipoDespesa_idx ON gastos(tipoDespesa);
+CREATE INDEX gastos_estranhos_tipoDespesa_idx ON gastos_estranhos(tipoDespesa);
