@@ -1,4 +1,6 @@
-Para visualizar o resultado final do projeto de data mining, será necessário instalar a ferramenta Orange Data Mining. Após a instalação, basta abrir o arquivo "TF_B12_MateusRibeiro_fimOrange.ows" com a ferramenta.
+Para visualizar o resultado final do projeto de data mining, será necessário instalar a ferramenta Orange Data Mining. 
+Após a instalação, basta abrir o arquivo "TF_B12_MateusRibeiro_fimOrange.ows" com a ferramenta, lembrando de que esse arquivo deve estar na mesma pasta dos documentos ".csv" para que funcione corretamente.
+
 
 Dentro da aplicação Orange, você poderá visualizar:
 
