@@ -53,17 +53,20 @@ SELECT * FROM vw_gastos_mensais_deputados;
 
 CREATE VIEW vw_total_partido_tipo_gastos AS
 SELECT 
-    g.partido AS sigla_partido,
+    p.sigla AS sigla_partido,
     p.nome AS nome_partido,
     g.tipoDespesa,
     SUM(g.valor) AS total_gastos
 FROM 
     gastos g
 JOIN 
-    partidos p ON g.partido = p.sigla
+    deputados d ON g.id_deputado = d.id
+JOIN 
+    partidos p ON d.partido = p.sigla
 GROUP BY 
-    g.partido, p.nome, g.tipoDespesa
+    p.sigla, p.nome, g.tipoDespesa
 ORDER BY 
-    g.partido, g.tipoDespesa;
+    p.sigla, g.tipoDespesa;
+
 
 SELECT * FROM vw_total_partido_tipo_gastos;
