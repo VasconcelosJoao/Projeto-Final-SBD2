@@ -2,7 +2,7 @@
 --
 --                    SCRIPT DE APAGAR (DDL)
 --
--- Data Criacao ...........: 17/06/2024
+-- Data Criacao ...........: 30/06/2024
 -- Autor(es) ..............: João Lucas Pinto Vasconcelos
 --                           Mateus Orlando Medeiros Ribeiro
 --                           Zenilda Pedrosa Vieira
